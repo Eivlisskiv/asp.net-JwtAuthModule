@@ -1,8 +1,11 @@
-﻿namespace IBS_Web.WebService.JwtAuthentication
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+
+namespace WebService.JwtAuthentication
 {
 	public static class ServiceSetUp
 	{
-		public static IServiceCollection AddJwtAuth(this IServiceCollection services)
+		public static IServiceCollection AddJwtAuth(this IServiceCollection services, SymmetricSecurityKey Key)
 		{
 			services.AddAuthentication(options =>
 			{
